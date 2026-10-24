@@ -1,0 +1,30 @@
+# The two helpers stay in Home Assistant. Their current values are delivered to the screen through ESPHome's encrypted
+# API and are used only to build the QR payload locally.
+defaults:
+  WIFI_SSID: input_text.wifi_ssid
+  WIFI_PASSWORD: input_text.wifi_password
+
+text_sensor:
+  - platform: homeassistant
+    id: wifi_qr_ssid
+    entity_id: ${WIFI_SSID}
+    internal: true
+  - platform: homeassistant
+    id: wifi_qr_password
+    entity_id: ${WIFI_PASSWORD}
+    internal: true
+
+# ESPHome compiles LVGL's QR widget only when one appears in YAML. This seed is always hidden; each tile creates its
+# visible QR object inside the drawing area Tessera gives it.
+lvgl:
+  top_layer:
+    widgets:
+      - qrcode:
+          id: wifi_qr_seed
+          hidden: true
+          size: 21
+          text: "0"
+
+wifi_qr:
+  ssid: wifi_qr_ssid
+  password: wifi_qr_password

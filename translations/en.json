@@ -1,0 +1,16 @@
+{
+  "_meta": { "name": "English" },
+  "screen": {
+    "helpers_empty": "Fill in both Wi-Fi helpers"
+  },
+  "app": {
+    "name": "Wi-Fi QR",
+    "summary": "Lets guests scan a QR code to join your Wi-Fi network.",
+    "tile_name": "Wi-Fi QR",
+    "tile_example": "Scan to join Wi-Fi",
+    "wifi_ssid": "Wi-Fi name helper",
+    "wifi_ssid_hint": "The input_text helper containing the network name (SSID).",
+    "wifi_password": "Wi-Fi password helper",
+    "wifi_password_hint": "The input_text helper containing the network password."
+  }
+}

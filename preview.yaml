@@ -1,0 +1,16 @@
+# What tools/preview.py shows: the data of your tiles on every kind of screen (docs/PREVIEW.md). Every part is
+# optional; without this file each tile type is shown once with its defaults. Never put a secret here.
+tiles:
+  - tile: connect
+    name: Guest Wi-Fi
+
+states:
+  input_text.wifi_ssid: { state: "Tessera Guest" }
+  input_text.wifi_password: { state: "welcome-home-2026" }
+
+# answers:   the answer of each fetch by its id, as the web service gives it (docs/PREVIEW.md)
+# commands:  answers to the questions of permissions.ha_commands
+# cards:     the entity a card of the manifest opens with
+# pictures:  a file beside this one for each address a tile's places show (plugin API 0.10)
+# savers:    the screensavers to show, each with its options, the data of its step and the file saver:picture shows
+#            (plugin API 0.14, docs/PREVIEW.md "Screensavers")
