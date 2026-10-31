@@ -2,7 +2,7 @@
 # every name, label and hint below is a key into translations/<language>.json, part "app".
 # Every field is explained in docs/MANIFEST.md. Start a plugin of your own with: python3 tools/new_plugin.py <id>
 id: wifi_qr
-version: 0.1.1
+version: 0.2.0
 api: "0.8"
 icon: qrcode
 maintainer: dynodix
@@ -33,3 +33,15 @@ tiles:
     sizes: { min: 1x1, max: 3x3 }
     memory: 900
     example: tile_example
+  # A QR code of any text (a link, a contact): the state of the tile's entity, a template sensor or a text helper, so
+  # Home Assistant decides what it holds and a new value needs no build; or the text of the option where there is none.
+  - id: code
+    name: code_name
+    icon: qrcode
+    sizes: { min: 1x1, max: 3x3 }
+    memory: 900
+    domains: [sensor, input_text, text]
+    example: code_example
+    options:
+      - { id: text, kind: text, label: code_text, hint: code_text_hint }
+      - { id: caption, kind: text, label: code_caption, hint: code_caption_hint }

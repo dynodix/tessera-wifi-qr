@@ -1,16 +1,25 @@
 {
-  "_meta": { "name": "English" },
+  "_meta": {
+    "name": "English"
+  },
   "screen": {
-    "helpers_empty": "Fill in both Wi-Fi helpers"
+    "helpers_empty": "Fill in both Wi-Fi helpers",
+    "code_empty": "Choose an entity or type a text"
   },
   "app": {
     "name": "Wi-Fi QR",
-    "summary": "Lets guests scan a QR code to join your Wi-Fi network.",
+    "summary": "QR codes on a tile: your Wi-Fi for guests, or any link or text from Home Assistant.",
     "tile_name": "Wi-Fi QR",
     "tile_example": "Scan to join Wi-Fi",
     "wifi_ssid": "Wi-Fi name helper",
     "wifi_ssid_hint": "The input_text helper containing the network name (SSID).",
     "wifi_password": "Wi-Fi password helper",
-    "wifi_password_hint": "The input_text helper containing the network password."
+    "wifi_password_hint": "The input_text helper containing the network password.",
+    "code_name": "QR code",
+    "code_example": "Scan to open the link",
+    "code_text": "Text or link",
+    "code_text_hint": "Shown as a QR code when the tile has no entity, up to 64 characters.",
+    "code_caption": "Caption",
+    "code_caption_hint": "A line under the code, such as Menu or Tickets. Empty: none."
   }
 }

@@ -3,10 +3,15 @@
 tiles:
   - tile: connect
     name: Guest Wi-Fi
+  - tile: code
+    name: Tickets
+    entity: sensor.ticket_link
+    options: { caption: Tickets }
 
 states:
   input_text.wifi_ssid: { state: "Tessera Guest" }
   input_text.wifi_password: { state: "welcome-home-2026" }
+  sensor.ticket_link: { state: "https://example.org/tickets/123e4567-e89b-12d3-a456-426614174000" }
 
 # answers:   the answer of each fetch by its id, as the web service gives it (docs/PREVIEW.md)
 # commands:  answers to the questions of permissions.ha_commands
