@@ -1,7 +1,8 @@
 # Wi-Fi QR
 
-A Tessera tile that shows a scannable QR code for a Wi-Fi network. Its network name and password come from two Home
-Assistant `input_text` helpers, so changing either helper updates the tile without rebuilding the screen.
+A Tessera tile that shows a scannable QR code for a Wi-Fi network, and a second one for any text or link. Its network
+name and password come from two Home Assistant `input_text` helpers, so changing either helper updates the tile without
+rebuilding the screen.
 
 ## Set up
 
@@ -10,6 +11,19 @@ Assistant `input_text` helpers, so changing either helper updates the tile witho
 3. Add this plugin to a screen in Tessera. Choose those two helpers when Tessera asks for them, then build the screen.
 4. In Layout, place the **Wi-Fi QR** tile from the Plugins group and resize it from 1 x 1 up to 3 x 3. A size of at
    least 2 x 2 is recommended for reliable scanning.
+
+## A QR code of any text
+
+The **QR code** tile shows a QR code of any text, such as a link to a ticket shop, a menu or a survey.
+
+1. In Layout, place the **QR code** tile and choose an entity in its inspector: a template sensor or a text helper
+   whose state is the text. A template sensor can build the link, for example
+   `https://example.org/event/{{ states('input_text.event_id') }}`. A new state shows at once, without a build.
+2. Or leave the entity empty and type the text under **Text or link** (up to 64 characters).
+3. **Caption** puts a line under the code, such as `Tickets`.
+
+The state of an entity reaches the screen with up to 160 bytes, enough for most links. The longer the text, the finer
+the code: give a long link a tile of at least 2 x 2.
 
 ## Good to know
 
